@@ -1,0 +1,18 @@
+ cmake/Modules/FindAWSSDK_EP.cmake | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/cmake/Modules/FindAWSSDK_EP.cmake b/cmake/Modules/FindAWSSDK_EP.cmake
+index 8bb66bfe..8f28c0c6 100644
+--- a/cmake/Modules/FindAWSSDK_EP.cmake
++++ b/cmake/Modules/FindAWSSDK_EP.cmake
+@@ -42,6 +42,10 @@ else()
+   set(AWSSDK_ROOT_DIR "${TILEDB_EP_INSTALL_PREFIX}")
+ endif()
+
++if (IS_ABSOLUTE ${AWSSDK_ROOT_DIR})
++  set(AWSSDK_ROOT_DIR "")
++endif()
++
+ # Check to see if the SDK is installed (which provides the find module).
+ # This will either use the system-installed AWSSDK find module (if present),
+ # or the superbuild-installed find module.
