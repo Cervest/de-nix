@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
     # expat
     # libxml2
     # postgresql
-    # netcdf
+    netcdf
     # hdf5
     curl
     swig
@@ -70,7 +70,7 @@ stdenv.mkDerivation rec {
     # "--with-hdf4=${hdf4.dev}" # optional
     # "--with-hdf5=${hdf5.dev}" # optional
     # "--with-xml2=${libxml2.dev}/bin/xml2-config" # optional
-    # "--with-netcdf=${netcdf}"
+    "--with-netcdf=${netcdf}"
   ];
 
   hardeningDisable = [ "format" ];
